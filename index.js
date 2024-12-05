@@ -6,7 +6,7 @@ const userRoutes = require('./routes/userApi')
 
 const server = express()
 server.use(cors({
-    origin: '*', 
+    origin: ['http://localhost:3001', 'https://your-production-domain.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
