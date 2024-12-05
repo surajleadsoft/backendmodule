@@ -7,21 +7,6 @@ const userRoutes = require('./routes/userApi')
 const server = express()
 server.use(cors())
 
-server.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Allow specific HTTP methods
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Allow specific headers
-    next();
-});
-
-// Handle preflight requests
-server.options('*', (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.sendStatus(200);
-});
-
 server.use(bodyParser.json())
 server.use('/api',userRoutes)
 
