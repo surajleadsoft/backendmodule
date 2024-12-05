@@ -8,7 +8,7 @@ const server = express()
 server.use(cors({
     origin: ['http://localhost:3001', 'https://your-production-domain.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    allowedHeaders: ['Content-Type'], 
 }));
 
 server.use(bodyParser.json())
