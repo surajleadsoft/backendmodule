@@ -5,7 +5,11 @@ const mongoose = require('mongoose')
 const userRoutes = require('./routes/userApi')
 
 const server = express()
-server.use(cors())
+server.use(cors({
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+}));
 
 server.use(bodyParser.json())
 server.use('/api',userRoutes)
