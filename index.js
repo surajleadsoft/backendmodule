@@ -6,10 +6,11 @@ const userRoutes = require('./routes/userApi')
 
 const server = express()
 server.use(cors())
+server.options('*', cors());
 server.use(bodyParser.json())
 server.use('/api',userRoutes)
 
-mongoose.connect('mongodb+srv://surajleadsoft:uoyXplw0TdWrS0vF@users.bkoi9.mongodb.net/').then(()=>{
+mongoose.connect('mongodb+srv://root:sDQvJjx5BqK6vs8v@cluster0.bsvjo.mongodb.net/').then(()=>{
     console.log("DB Connected !!")
 }).catch((error)=>{
     console.log("Error while connecting the database:"+error.message)
